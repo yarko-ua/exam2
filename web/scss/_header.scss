@@ -1,6 +1,11 @@
+// $ghotamBold: 'gothambold1';
+$ghotamBook: GothamBook;
+// $gothamMedium: 'gothamMedium';
+
+
 nav {
     position: absolute;
-    padding-top: 20px;
+    padding-top: 53px;
     left: 0;
     right: 0;
     z-index: 1;
@@ -8,31 +13,40 @@ nav {
 }
 .nav-flex-row{
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
     ul{
         display: flex;
+        width: 100%;
+        max-width: 600px;
         flex-flow: row nowrap;
-        justify-content: space-around;
+        justify-content: space-between;
         list-style-type: none;
         margin-bottom: 0;
 
     };
 
     li {
-        margin: 0px 49px;
+        padding-left: 14px;
         a {
             color: #fff;
             text-transform: uppercase;
+            font-size: 14px;
+            line-height: 22px;
+            font-family: GothamBook;
         &::before {
             content: '';
             display: inline-block;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 9px;
             border: 1px solid #fff;
             border-radius: 50%;
+            background-color: transparent;
             margin-right: 10px;
+            transition: 0.5s;
             }
         &:hover::before {
                 background-color: #fff;
@@ -56,17 +70,19 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 43px;
-    height: 41px;
+    width: 40px;
+    height: 40px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     margin: 0px 10px;
+    transition: .4s background-color ease-in-out;
     
     &:hover i{
-        color: rgba($color: #176fd4, $alpha: 0.7);
+        color: #000;
+        transform: scale(1.3);
     }
     &:hover {
-        border: 1px solid rgba($color: #b9b719, $alpha: 0.9);
+        background-color: #fff;
     }
     }
 }
@@ -81,7 +97,7 @@ header {
     background: url(../img/headerImg.png), url(../img/headerBackgr.png) no-repeat center;
     background-size: cover;
     width: 100%;
-    height: 1035px;
+    min-height: 801px;
 
     div {
         margin: 0 auto;
@@ -91,12 +107,18 @@ header {
     }
 
     h1 {
-     font-size: 40px;
+     font-size: 80px;
+     font-family: gothambold1  ;
+     letter-spacing: 4px;
      padding-top: 370px;
+     margin: 0;
      text-transform: uppercase;
     }
     h2 {
         text-transform: uppercase;
+        font-size: 18px;
+        font-family: GothamBook;
+        letter-spacing: 5px;
     }
     a {
      position: absolute;
@@ -106,14 +128,53 @@ header {
      justify-content: center;
      border: 1px solid rgba(255, 255, 255, 0.3);
      border-radius: 50%;
-     width: 43px;
-     height: 41px;
+     width: 40px;
+     height: 40px;
      
      i{
         font-size: 13px;
         color: #fff;
         opacity: 1;
+        }
+    &:hover i {
+        animation: down 1s infinite ease-in-out;
     }
+    }
+}
 
- }
+@keyframes down {
+    0% {transform: translate(0px,0px);}
+    50% {transform: translate(0px,7px);}
+    100% {transform: translate(0px,0px);}
+}
+
+.header-dots {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+    width: 30px;
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    li button{
+        width: 9px;
+        height: 9px;
+        border: 1px solid #fff;
+        background-color: transparent;
+        border-radius: 50%;
+        font-size: 0;
+        margin: 10px 0px;
+        cursor: pointer;
+    };
+    li.slick-active button {
+        width: 9px;
+        height: 9px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        font-size: 0;
+        margin: 10px 0px;
+        background-color: #fff;
+    };
 }
